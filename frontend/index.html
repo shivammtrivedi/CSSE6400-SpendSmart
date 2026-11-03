@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpendSmart | Auth</title>
+  <link rel="stylesheet" href="./assets/css/layout.css" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <script src="./assets/js/theme.js"></script>
+</head>
+<body>
+  <main class="landing">
+    <a class="brand" href="./home.html"><span class="brand-dot"></span><span class="brand-name">SpendSmart</span></a>
+    <h2>Login or sign up to continue</h2>
+    <p>Authenticate with Cognito Hosted UI using authorization code + PKCE.</p>
+
+    <div class="actions spaced" style="justify-content:center;">
+      <a id="cognito-login-btn" class="btn primary" href="#">Sign In / Sign Up</a>
+      <a class="btn secondary" href="./home.html">Continue to Home</a>
+    </div>
+    <p id="status" class="status warn spaced">Ready for Cognito login.</p>
+  </main>
+
+  <script type="module" src="./assets/js/pages/index.js"></script>
+</body>
+</html>

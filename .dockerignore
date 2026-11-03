@@ -1,0 +1,15 @@
+.git
+.github
+.idea
+.vscode
+.terraform
+**/.gradle
+**/build
+**/out
+**/.DS_Store
+**/*.iml
+terraform/.terraform
+terraform/*.tfstate
+terraform/*.tfstate.backup
+terraform/credentials
+frontend/node_modules

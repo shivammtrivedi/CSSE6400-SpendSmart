@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpendSmart | Group Members</title>
+  <link rel="stylesheet" href="./assets/css/layout.css" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <script src="./assets/js/theme.js"></script>
+</head>
+<body>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar-head">
+        <a class="brand" href="./home.html"><span class="brand-dot"></span><span class="brand-name">SpendSmart</span></a>
+      </div>
+      <nav class="nav">
+        <span class="nav-section">Workspace</span>
+        <a href="./home.html" data-page="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg><span>Home</span></a>
+        <a class="active" href="./groups.html" data-page="groups"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18.5 20c0-2.6-1-4.3-2.5-5.2"/></svg><span>Groups</span></a>
+        <a href="./expenses.html" data-page="expenses"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v18l-2.5-1.5L14 21l-2-1.5L10 21l-2.5-1.5L5 21z"/><path d="M9 8h6"/><path d="M9 12h6"/></svg><span>Expenses</span></a>
+        <a href="./settlements.html" data-page="settlements"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h13l-3.5-3.5"/><path d="M17 17H4l3.5 3.5"/></svg><span>Settlements</span></a>
+        <span class="nav-section">Insights</span>
+        <a href="./dashboard.html" data-page="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M2 20h20"/></svg><span>Dashboard</span></a>
+        <a href="./search.html" data-page="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><span>Search</span></a>
+        <a href="./alerts.html" data-page="alerts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6"/><path d="M10.5 20a2 2 0 0 0 3 0"/></svg><span>Alerts</span></a>
+        <a href="./budgets.html" data-page="budgets"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Budgets</span></a>
+        <span class="nav-section">Account</span>
+        <a href="./bank-connect.html" data-page="bank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><path d="M5 10v8"/><path d="M10 10v8"/><path d="M14 10v8"/><path d="M19 10v8"/><path d="M3 21h18"/></svg><span>Banking</span></a>
+        <a href="./index.html" data-page="index"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4h4v16h-4"/><path d="M11 16l4-4-4-4"/><path d="M15 12H3"/></svg><span>Sign in</span></a>
+      </nav>
+      <div class="sidebar-foot">
+        <button id="theme-toggle" class="theme-toggle" type="button">
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.5 6.5 0 0 0 21 12.8z"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+          <span>Theme</span>
+        </button>
+      </div>
+    </aside>
+    <label for="nav-toggle" class="nav-scrim" aria-hidden="true"></label>
+    <div class="content">
+      <header class="topbar">
+        <label for="nav-toggle" class="nav-burger" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg></label>
+        <div class="topbar-titles">
+          <h1>Group Members</h1>
+          <span class="topbar-sub">Add or remove members for a single group.</span>
+        </div>
+        <div class="topbar-actions"></div>
+      </header>
+
+      <main class="main grid two">
+        <section class="card" style="grid-column:1 / -1;">
+          <header><h2>Manage Group Members</h2></header>
+          <p>This page focuses on one group at a time for safe member changes and leave-group actions.</p>
+          <div class="subnav spaced">
+            <a class="btn ghost" href="./groups.html">Back to Group Workspace</a>
+            <a class="btn secondary" href="./expenses.html">Go to Group Expenses</a>
+          </div>
+        </section>
+
+        <section class="card" style="grid-column:1 / -1;">
+          <header><h2>1. Choose Group</h2></header>
+          <div class="actions">
+            <button id="load-groups-btn" class="btn primary" type="button">Load My Groups</button>
+          </div>
+          <div class="table-wrap">
+            <table class="table spaced">
+              <thead>
+                <tr><th>Group ID</th><th>Name</th><th>Members</th><th></th></tr>
+              </thead>
+              <tbody id="groups-body">
+                <tr><td colspan="4" class="empty">Load your groups to begin.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="card">
+          <header><h2>2. Add or Remove Member</h2></header>
+          <p class="helper">Select a group first, then add or remove by user UUID.</p>
+          <label for="member-user-id" class="spaced">Member User ID</label>
+          <input id="member-user-id" type="text" placeholder="Paste user UUID" />
+          <div class="actions">
+            <button id="add-member-btn" class="btn secondary" type="button">Add Member</button>
+            <button id="remove-member-btn" class="btn danger" type="button">Remove Member</button>
+            <button id="leave-group-btn" class="btn ghost" type="button">Leave Group</button>
+          </div>
+        </section>
+
+        <section id="detail-card" class="card" style="grid-column:1 / -1; display:none;">
+          <header><h2 id="detail-title">Group Details</h2></header>
+          <p class="helper">Active members in this group:</p>
+          <ul id="members-list"></ul>
+        </section>
+
+        <p id="status" class="status warn" style="grid-column:1 / -1;">Ready.</p>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="./assets/js/pages/groups-members.js"></script>
+</body>
+</html>

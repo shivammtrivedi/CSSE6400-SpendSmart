@@ -1,0 +1,75 @@
+name: Discord Notifications
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    types: [review_requested]
+
+jobs:
+  notify-push:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send push notification
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          BRANCH="${GITHUB_REF#refs/heads/}"
+          COMMIT_MSG=$(echo "${{ github.event.head_commit.message }}" | head -1)
+          PUSHER="${{ github.event.pusher.name }}"
+          REPO="${{ github.repository }}"
+          COMMIT_SHA="${{ github.sha }}"
+          SHORT_SHA="${COMMIT_SHA:0:7}"
+          COMMIT_URL="https://github.com/${REPO}/commit/${COMMIT_SHA}"
+          COMPARE_URL="${{ github.event.compare }}"
+
+          curl -H "Content-Type: application/json" \
+            -X POST \
+            -d "{
+              \"embeds\": [{
+                \"title\": \"New push to \`${BRANCH}\`\",
+                \"description\": \"**${COMMIT_MSG}**\",
+                \"color\": 5814783,
+                \"fields\": [
+                  { \"name\": \"Pusher\", \"value\": \"${PUSHER}\", \"inline\": true },
+                  { \"name\": \"Commit\", \"value\": \"[\`${SHORT_SHA}\`](${COMMIT_URL})\", \"inline\": true },
+                  { \"name\": \"Compare\", \"value\": \"[View diff](${COMPARE_URL})\", \"inline\": true }
+                ],
+                \"footer\": { \"text\": \"${REPO}\" }
+              }]
+            }" \
+            "$DISCORD_WEBHOOK_URL"
+
+  notify-review-requested:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send review request notification
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_REVIEW_WEBHOOK_URL }}
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          PR_URL="${{ github.event.pull_request.html_url }}"
+          PR_AUTHOR="${{ github.event.pull_request.user.login }}"
+          REVIEWER="${{ github.event.requested_reviewer.login }}"
+          REPO="${{ github.repository }}"
+          BASE="${{ github.event.pull_request.base.ref }}"
+          HEAD="${{ github.event.pull_request.head.ref }}"
+
+          curl -H "Content-Type: application/json" \
+            -X POST \
+            -d "{
+              \"embeds\": [{
+                \"title\": \"Review requested: ${PR_TITLE}\",
+                \"url\": \"${PR_URL}\",
+                \"description\": \"**${REVIEWER}**, your review has been requested.\",
+                \"color\": 16753920,
+                \"fields\": [
+                  { \"name\": \"Author\", \"value\": \"${PR_AUTHOR}\", \"inline\": true },
+                  { \"name\": \"Branch\", \"value\": \"\`${HEAD}\` → \`${BASE}\`\", \"inline\": true }
+                ],
+                \"footer\": { \"text\": \"${REPO}\" }
+              }]
+            }" \
+            "$DISCORD_WEBHOOK_URL"
